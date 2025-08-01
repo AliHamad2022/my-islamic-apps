@@ -1,43 +1,58 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تطبيقاتي الإسلامية</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('https://i.imgur.com/I9VZl6G.jpg'); /* خلفية زخرفة إسلامية */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body class="text-white">
+  <div class="overlay min-h-screen p-6">
+    <!-- العنوان -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold mb-2">📱 تطبيقاتي الإسلامية</h1>
+      <p class="text-lg text-gray-300">مصحف - أذكاري - مشغل القرآن</p>
+    </header>
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["master"]
+    <!-- التطبيقات -->
+    <section class="grid md:grid-cols-3 gap-6">
+      <!-- تطبيق المصحف -->
+      <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-semibold mb-2">📖 تطبيق المصحف</h2>
+        <p class="text-gray-200 mb-4">قراءة سلسة، دعم الوضع الليلي، بدون إنترنت.</p>
+        <a href="quran_masuhaf.apk" download class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg">⬇️ تحميل APK</a>
+      </div>
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+      <!-- تطبيق أذكاري -->
+      <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-semibold mb-2">🕋 تطبيق أذكاري</h2>
+        <p class="text-gray-200 mb-4">عداد أذكار، أدعية مخصصة، واجهة مريحة.</p>
+        <a href="athkari.apk" download class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg">⬇️ تحميل APK</a>
+      </div>
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+      <!-- تطبيق مشغل القرآن -->
+      <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-semibold mb-2">🎧 مشغل القرآن</h2>
+        <p class="text-gray-200 mb-4">215 قارئ، جميع السور، تكرار وتشغيل تلقائي.</p>
+        <a href="quran.apk" download class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">⬇️ تحميل APK</a>
+      </div>
+    </section>
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    <!-- التذييل -->
+    <footer class="mt-16 text-center text-gray-400">
+      <p>حقوق النشر © 2025 | تم التطوير بواسطة مطور علي محسن</p>
+    </footer>
+  </div>
+</body>
+</html>
